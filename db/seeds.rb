@@ -29,5 +29,6 @@ cities = JSON.parse(city_file)
 top_cities = [5128581, 5368361, 6167865, 4887398, 6077243, 4560349, 5913490, 6094817, 5946768, 5391959, 6075357, 6183235, 5809844, 4853799, 5419384, 4990729, 4930956, 5746545, 6173331, 5263045, 5907364, 5969785, 6325494, 6159905]
 
 top_cities.each do |city_id|
-  city = Cities.find(|city| city["id"] == city_id)
+  city = cities.find {|city| city["id"] == city_id}
   City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0)
+end
