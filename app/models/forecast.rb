@@ -1,6 +1,7 @@
 class Forecast < ApplicationRecord
   belongs_to :city
 
+
   def chilly?
    current_temp <= 285
   end
@@ -21,25 +22,24 @@ class Forecast < ApplicationRecord
     wind_speed >= 6
   end
 
-
-def rate_forecast
-  if chilly?
-    city.rating += 1
+  def rate_forecast
+    if chilly?
+      city.rating += 1
+    end
+    if freezing?
+      city.rating += 1
+    end
+    if rainy?
+      city.rating += 2
+    end
+    if cloudy?
+      city.rating += 1
+    end
+    if windy?
+      city.rating += 1
+    end
+    city.save
   end
-  if freezing?
-    city.rating += 1
-  end
-  if rainy?
-    city.rating += 2
-  end
-  if cloudy?
-    city.rating += 1
-  end
-  if windy?
-    city.rating += 1
-  end
-  city.save
-end
 
 
 end
