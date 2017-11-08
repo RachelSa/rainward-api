@@ -2,23 +2,17 @@ class ForecastController < ApplicationController
 
   def suggestions
     cities = City.all
-     key = Rails.application.secrets.weather_key
-
     # for each city, get its forecast
     forecasts = cities.map do |city|
-      weather = RestClient.get("http://api.openweathermap.org/data/2.5/forecast?id=#{city.api_id}&appid=#{key}")
-      parsed_weather = JSON.parse(weather)
-      # for each city's forecasts, make a Forecast instance
-      parsed_weather["list"].map do |w|
-        byebug
-        f = Forecast.create(current_temp:w["main"]["temp"], wind_speed:w["wind"]["speed"], cloud_coverage:w["clouds"]["all"], weather_code:w["weather"][0]['id'], city_id: city.id)
-        f.rate_forecast
-        byebug
+      parsed_weather = city.get_forecast
+      # for each city's forecasts, make a Forecast instance and rate the forecast for a city
+      parsed_weather["list"].each do |weatha|
+        forecast = Forecast.create(current_temp:weatha["main"]["temp"], wind_speed:weatha["wind"]["speed"], cloud_coverage:weatha["clouds"]["all"], weather_code:weatha["weather"][0]['id'], city_id: city.id)
+        forecast.rate_forecast
       end
-      # now rate each city based on its forecasts
-
-
     end
+    @six_dreariest = City.six_dreariest
+    render json: @six_dreariest
   end
 
 
