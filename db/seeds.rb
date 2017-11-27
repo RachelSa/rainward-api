@@ -21,15 +21,16 @@ cities = JSON.parse(city_file)
 #   end
 # end
 
-# New York, LA, Toronto, Chicago, Montreal, Philidelphia, Calgary, Ottowa, Edmonton, San Fracisco, Mississauga,
+# New York, Toronto, Chicago, Montreal, Philidelphia, Calgary, Ottowa, Edmonton, San Fracisco, Mississauga,
 # Winnipeg, Seattle, Denver, Detroit, Boston, Portland, Vancouver, Milwaukee, Brampton, Hamilton, Quebec City, Surrey
 ####
 
 
-us_cities = [5128581, 5368361, 4887398, 4560349, 5391959,  5809844, 4853799, 5419384, 4990729, 4930956, 5746545]
+us_cities_east = [5128581, 4887398, 4560349, 4990729, 4930956]
+# us_cities_west = [5391959, 5809844, 4853799, 5746545, 5419384]
 # ca_cities = [6167865, 6077243, 5913490, 6094817, 5946768, 6075357, 6183235, 6173331, 5263045, 5907364, 5969785, 6325494, 6159905]
 
-us_cities.each do |city_id|
+us_cities_east.each do |city_id|
   city = cities.find {|city| city["id"] == city_id}
   City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0)
 end

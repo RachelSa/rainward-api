@@ -5,8 +5,8 @@ class City < ApplicationRecord
     JSON.parse(weather)
   end
 
-  def self.six_dreariest
-    order(rating: :desc).limit(6)
+  def self.three_dreariest
+    order(rating: :desc).limit(3)
   end
 
 
