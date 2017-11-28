@@ -33,7 +33,7 @@ class Forecast < ApplicationRecord
       city.rating += 2
     end
     if cloudy?
-      city.rating += 1
+      city.rating += 2
     end
     if windy?
       city.rating += 1
