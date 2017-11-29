@@ -36,17 +36,17 @@ us_cities_east.each do |city_id|
 end
 
 ny = City.find_by(api_id: 5128581)
-ny.photo_url = "https://c2.staticflickr.com/8/7374/8786107863_53fc698cd5_q.jpg"
+ny.photo_url = "https://c2.staticflickr.com/8/7551/16164053956_6ea773f001.jpg"
 ny.save
 
 chicago = City.find_by(api_id: 4887398)
-chicago.photo_url = "https://c2.staticflickr.com/6/5564/15066948520_0013fa2c91_q.jpg"
+chicago.photo_url = "https://c2.staticflickr.com/6/5566/15253643875_fe29540ddf.jpg"
 chicago.save
 
 phili = City.find_by(api_id: 4560349)
-phili.photo_url = "https://c1.staticflickr.com/7/6034/5886078117_81736521e3_q.jpg"
+phili.photo_url = "https://c1.staticflickr.com/7/6034/5886078117_81736521e3.jpg"
 phili.save
 
 bos = City.find_by(api_id: 4930956)
-bos.photo_url = "https://c1.staticflickr.com/5/4090/5173948387_cc081b5104_q.jpg"
+bos.photo_url = "https://c1.staticflickr.com/3/2279/2215012629_71f107ce6a.jpg"
 bos.save
