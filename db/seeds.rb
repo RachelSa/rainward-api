@@ -34,3 +34,19 @@ us_cities_east.each do |city_id|
   city = cities.find {|city| city["id"] == city_id}
   City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0)
 end
+
+ny = City.find_by(api_id: 5128581)
+ny.photo_url = "https://c2.staticflickr.com/8/7374/8786107863_53fc698cd5_q.jpg"
+ny.save
+
+chicago = City.find_by(api_id: 4887398)
+chicago.photo_url = "https://c2.staticflickr.com/6/5564/15066948520_0013fa2c91_q.jpg"
+chicago.save
+
+phili = City.find_by(api_id: 4560349)
+phili.photo_url = "https://c1.staticflickr.com/7/6034/5886078117_81736521e3_q.jpg"
+phili.save
+
+bos = City.find_by(api_id: 4930956)
+bos.photo_url = "https://c1.staticflickr.com/5/4090/5173948387_cc081b5104_q.jpg"
+bos.save
