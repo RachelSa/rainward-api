@@ -7,6 +7,11 @@ class CreateCities < ActiveRecord::Migration[5.1]
       t.string :country
       t.float :lat
       t.float :lon
+      t.string :region
+      t.string :photo_url, default: "https://c1.staticflickr.com/7/6101/6347529989_fba4717061_q.jpg"
+      t.integer :current_description
+      t.string :current_temp
+      t.references :suggestion
     end
   end
 end

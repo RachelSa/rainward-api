@@ -1,4 +1,4 @@
-class ForecastController < ApplicationController
+class ForecastsController < ApplicationController
 
   def suggestions
     City.update_all(rating: 0)

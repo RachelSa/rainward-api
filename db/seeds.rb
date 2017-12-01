@@ -32,7 +32,7 @@ us_cities_east = [5128581, 4887398, 4560349, 4990729, 4930956]
 
 us_cities_east.each do |city_id|
   city = cities.find {|city| city["id"] == city_id}
-  City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0)
+  City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0, region:"usne")
 end
 
 ny = City.find_by(api_id: 5128581)

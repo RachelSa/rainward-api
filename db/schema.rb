@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129172944) do
+ActiveRecord::Schema.define(version: 20171201130634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,12 @@ ActiveRecord::Schema.define(version: 20171129172944) do
     t.string "country"
     t.float "lat"
     t.float "lon"
+    t.string "region"
     t.string "photo_url", default: "https://c1.staticflickr.com/7/6101/6347529989_fba4717061_q.jpg"
+    t.integer "current_description"
+    t.string "current_temp"
+    t.bigint "suggestion_id"
+    t.index ["suggestion_id"], name: "index_cities_on_suggestion_id"
   end
 
   create_table "forecasts", force: :cascade do |t|
@@ -32,6 +37,10 @@ ActiveRecord::Schema.define(version: 20171129172944) do
     t.integer "weather_code"
     t.bigint "city_id"
     t.index ["city_id"], name: "index_forecasts_on_city_id"
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.string "region"
   end
 
 end

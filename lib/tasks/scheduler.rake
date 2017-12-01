@@ -1,10 +1,3 @@
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
-
-require_relative 'config/application'
-
-Rails.application.load_tasks
-
 desc "Heroku scheduler add-on"
 task :update_usne => :environment do
   puts "Updating US Northeast weather suggestions..."
@@ -14,3 +7,7 @@ task :update_usne => :environment do
     suggestion.save
   puts "done."
 end
+
+# task :send_reminders => :environment do
+#   User.send_reminders
+# end
