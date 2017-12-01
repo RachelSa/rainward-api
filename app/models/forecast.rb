@@ -23,22 +23,23 @@ class Forecast < ApplicationRecord
   end
 
   def rate_forecast
+    rating = 0
     if chilly?
-      city.rating += 1
+      rating += 1
     end
     if freezing?
-      city.rating += 1
+      rating += 1
     end
     if rainy?
-      city.rating += 2
+      rating += 2
     end
     if cloudy?
-      city.rating += 2
+      rating += 2
     end
     if windy?
-      city.rating += 1
+      rating += 1
     end
-    city.save
+    rating
   end
 
 
