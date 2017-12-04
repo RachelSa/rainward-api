@@ -15,8 +15,5 @@ class Suggestion < ApplicationRecord
     end
     top_cities = regional_cities.order(rating: :desc).limit(3)
     self.cities.concat(top_cities)
-
   end
-
-
 end
