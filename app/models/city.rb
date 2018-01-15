@@ -2,15 +2,15 @@ class City < ApplicationRecord
   belongs_to :suggestion, optional: true
 
   def get_forecast
-    # key = Rails.application.secrets.weather_key
-    key = ENV["WEATHER_KEY"]
+     key = Rails.application.secrets.weather_key
+    #key = ENV["WEATHER_KEY"]
     weather = RestClient.get("http://api.openweathermap.org/data/2.5/forecast?id=#{api_id}&appid=#{key}")
     JSON.parse(weather)
   end
 
   def add_current_weather
-    # key = Rails.application.secrets.weather_key
-    key = ENV["WEATHER_KEY"]
+     key = Rails.application.secrets.weather_key
+    #key = ENV["WEATHER_KEY"]
     weather = RestClient.get("http://api.openweathermap.org/data/2.5/weather?id=#{api_id}&appid=#{key}")
     parsed_weather = JSON.parse(weather)
     temp_in_k = parsed_weather["main"]["temp"]

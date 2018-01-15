@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203213130) do
+ActiveRecord::Schema.define(version: 20180115001603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20171203213130) do
     t.float "current_temp"
     t.bigint "suggestion_id"
     t.string "photo_cred", default: "unknown"
+    t.integer "precipitation_rating", default: 0
+    t.integer "temperature_rating", default: 0
+    t.integer "cloudiness_rating", default: 0
+    t.integer "windiness_rating", default: 0
     t.index ["suggestion_id"], name: "index_cities_on_suggestion_id"
   end
 
