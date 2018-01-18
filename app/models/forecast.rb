@@ -3,7 +3,7 @@ class Forecast < ApplicationRecord
 
 
   def chilly?
-   current_temp <= 285
+   current_temp <= 283.15
   end
 
   # def freezing?
@@ -11,7 +11,7 @@ class Forecast < ApplicationRecord
   # end
 
   def rainy?
-    weather_code < 800 || weather_code == 803 || weather_code == 804 || weather_code == 955 || weather_code == 965
+    weather_code <= 701
   end
 
   def cloudy?
