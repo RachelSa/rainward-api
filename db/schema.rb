@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180115001603) do
+ActiveRecord::Schema.define(version: 20180515184914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20180115001603) do
     t.float "lat"
     t.float "lon"
     t.string "region"
-    t.string "photo_url", default: "https://c1.staticflickr.com/7/6101/6347529989_fba4717061_q.jpg"
+    t.string "photo_url", default: "https://c1.staticflickr.com/5/4048/4303835161_519bd7553e_n.jpg"
     t.string "current_description"
     t.float "current_temp"
     t.bigint "suggestion_id"
-    t.string "photo_cred", default: "unknown"
+    t.string "photo_cred", default: "Horia Varlan"
     t.integer "precipitation_rating", default: 0
     t.integer "temperature_rating", default: 0
     t.integer "cloudiness_rating", default: 0
