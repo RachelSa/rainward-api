@@ -4,18 +4,6 @@
 city_file = File.read("./db/city.list.json")
 all_cities = JSON.parse(city_file)
 
-# cities.each do |city|
-#   if ["RU", "UK", "US", "GB", "UA", "CH", "SE", "SJ", "SU", "GS", "ZA", "SK", "RS", "RO", "PL", "NO", "NZ", "NL", "	LU", "LI", "LV", "KG", "KZ", "JP", "IM", "IE", "IS", "HU", "GL", "DE","GE", "FI", "EE", "DK", "CZ", "CL", "BG", "BE", "BY", "AT", "AQ", "CA"].include?(city["country"])
-#     City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0)
-#   end
-# end
-
-# cities.each do |city|
-#   if ["US", "CA"].include?(city["country"]) && city["coord"]["lat"] > 37
-#     City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0)
-#   end
-# end
-
 # us_cities_east = [5128581, 4887398, 4560349, 4990729, 4930956]
 # us_cities_west = [5391959, 5809844, 4853799, 5746545]
 # ca_cities_east = [
@@ -37,19 +25,30 @@ all_cities = JSON.parse(city_file)
 # # Vancouver, Calgary, Edmonton, Surrey
 #
 
+# us_cities_east = [
+#   {api_id:5234372, photo_url:"https://c1.staticflickr.com/5/4139/4822043714_600718ffd4.jpg", photo_cred:"kohane"},
+#   {api_id:4975802, photo_url:"https://c2.staticflickr.com/8/7214/7363666714_cf6c357eb9.jpg", photo_cred:"Corey Templeton"}
+# ]
+# Burlington, Portland
+
 us_cities_east = [
-  {api_id:5234372, photo_url:"https://c1.staticflickr.com/5/4139/4822043714_600718ffd4.jpg", photo_cred:"kohane"},
-  {api_id:4975802, photo_url:"https://c2.staticflickr.com/8/7214/7363666714_cf6c357eb9.jpg", photo_cred:"Corey Templeton"}
+  {api_id: 4509177, photo_url:"https://c1.staticflickr.com/5/4029/4526376699_571a3bae67.jpg", photo_cred:"Arienz"},
+  {api_id: 4259418, photo_url:"https://c1.staticflickr.com/1/164/336317225_2382140f79.jpg", photo_cred:"cyanocorax"},
+  {api_id: 4990729},
+  {api_id: 5263045, photo_url:"https://c1.staticflickr.com/5/4079/4757709350_5964ae763c.jpg", photo_cred:"(vincent desjardins)"},
+  {api_id: 5037649, photo_url:"https://www.flickr.com/photos/diversey/2689753217/sizes/m/", photo_cred:"Tony Webster"}
 ]
 
+# columbus, indianapolis, detroit, milwaukee, minneapolis
 
-# us_cities_east.each do |c|
-#   city = all_cities.find {|city| city["id"] == c["api_id"]}
+# us_cities_east.each do |ci|
+#
+#   city = all_cities.find {|city| city["id"] == ci[:api_id]}
 #
 #   City.create(
 #     api_id: city["id"],
-#     photo_url:c["photo_url"],
-#     photo_cred:c["photo_cred"],
+#     photo_url:ci[:photo_url],
+#     photo_cred:ci[:photo_cred],
 #     name:city["name"],
 #     country:city["country"],
 #     lat: city["coord"]["lat"],
@@ -57,30 +56,50 @@ us_cities_east = [
 #     rating:0,
 #     region:"usne")
 # end
-#
-# us_cities_west.each do |city_id|
-#   city = all_cities.find {|city| city["id"] == city_id}
-#   City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0, region:"usnw")
-# end
-#
-def make_city_objects(regional_cities, cities, regional_code)
-  regional_cities.each do |ca_city|
-    city = cities.find do |city_data|
-      city_data["id"] == ca_city[:api_id]
-    end
-    created_city = City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0, region:regional_code)
-    if ca_city[:photo_url]
-      created_city.photo_url = ca_city[:photo_url]
-    end
-    if ca_city[:photo_cred]
-       created_city.photo_cred = ca_city[:photo_cred]
-     end
-     created_city.save
-  end
+
+us_cities_west = [
+  {api_id:5389489, photo_url:"https://c1.staticflickr.com/9/8203/8239617017_9a715d6137.jpg", photo_cred:"Ray Bouknight"},
+  {api_id:5074472, photo_url:"https://www.flickr.com/photos/justafuckingname/4478466814/sizes/m/", photo_cred:"mista stagga lee"},
+  {api_id:4407074, photo_url:"https://c1.staticflickr.com/5/4473/37790813312_17a23375ec.jpg", photo_cred:"SymphonicPoet"},
+  {api_id:5042563, photo_url:"https://c1.staticflickr.com/1/2/1701974_ae1a9baee8.jpg", photo_cred:"peterme"},
+  {api_id:5586437}
+]
+# sacremento, omaha, st louis, st paul, boise
+
+us_cities_west.each do |ci|
+
+  city = all_cities.find {|city| city["id"] == ci[:api_id]}
+
+  City.create(
+    api_id: city["id"],
+    photo_url:ci[:photo_url],
+    photo_cred:ci[:photo_cred],
+    name:city["name"],
+    country:city["country"],
+    lat: city["coord"]["lat"],
+    lon: city["coord"]["lon"],
+    rating:0,
+    region:"usnw")
 end
+
+# def make_city_objects(regional_cities, cities, regional_code)
+#   regional_cities.each do |ca_city|
+#     city = cities.find do |city_data|
+#       city_data["id"] == ca_city[:api_id]
+#     end
+#     created_city = City.create(api_id: city["id"], name:city["name"], country:city["country"], lat: city["coord"]["lat"], lon: city["coord"]["lon"], rating:0, region:regional_code)
+#     if ca_city[:photo_url]
+#       created_city.photo_url = ca_city[:photo_url]
+#     end
+#     if ca_city[:photo_cred]
+#        created_city.photo_cred = ca_city[:photo_cred]
+#      end
+#      created_city.save
+#   end
+# end
 # make_city_objects(ca_cities_east, all_cities, "cane")
 # make_city_objects(ca_cities_west, all_cities, "canw")
-make_city_objects(us_cities_east, all_cities, "usne")
+# make_city_objects(us_cities_east, all_cities, "usne")
 #
 # ny = City.find_by(api_id: 5128581)
 # ny.photo_url = "https://c2.staticflickr.com/8/7551/16164053956_6ea773f001.jpg"
