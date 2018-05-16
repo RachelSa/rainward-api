@@ -21,7 +21,6 @@ class Suggestion < ApplicationRecord
       city.save
     end
     top_cities = regional_cities.order(rating: :desc).limit(3)
-    byebug
     self.cities.concat(top_cities)
   end
 
