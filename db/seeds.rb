@@ -41,21 +41,21 @@ us_cities_east = [
 
 # columbus, indianapolis, detroit, milwaukee, minneapolis
 
-# us_cities_east.each do |ci|
-#
-#   city = all_cities.find {|city| city["id"] == ci[:api_id]}
-#
-#   City.create(
-#     api_id: city["id"],
-#     photo_url:ci[:photo_url],
-#     photo_cred:ci[:photo_cred],
-#     name:city["name"],
-#     country:city["country"],
-#     lat: city["coord"]["lat"],
-#     lon: city["coord"]["lon"],
-#     rating:0,
-#     region:"usne")
-# end
+us_cities_east.each do |ci|
+
+  city = all_cities.find {|city| city["id"] == ci[:api_id]}
+
+  City.create(
+    api_id: city["id"],
+    photo_url:ci[:photo_url],
+    photo_cred:ci[:photo_cred],
+    name:city["name"],
+    country:city["country"],
+    lat: city["coord"]["lat"],
+    lon: city["coord"]["lon"],
+    rating:0,
+    region:"usne")
+end
 
 us_cities_west = [
   {api_id:5389489, photo_url:"https://c1.staticflickr.com/9/8203/8239617017_9a715d6137.jpg", photo_cred:"Ray Bouknight"},
