@@ -28,6 +28,10 @@ class SuggestionsController < ApplicationController
     render json: display_cities
   end
 
+  def suggestions_endpoints
+    render json: Suggestion.endpoints_list
+  end
+
   private
     def update_with_current_weather(suggestion)
       suggestion.cities.each {|city| city.add_current_weather}

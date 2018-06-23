@@ -24,5 +24,15 @@ class Suggestion < ApplicationRecord
     self.cities.concat(top_cities)
   end
 
-
+  def self.endpoints_list
+    return {
+      description: "All endpoints for the Rainward API.",
+      suggestions_endpoints: [
+        {us_northeast: "https://floating-escarpment-37906.herokuapp.com/suggestions/us-northeast"},
+        {us_northwest: "https://floating-escarpment-37906.herokuapp.com/suggestions/us-northwest"},
+        {canada_east: "https://floating-escarpment-37906.herokuapp.com/suggestions/ca-northeast"},
+        {canada_west: "https://floating-escarpment-37906.herokuapp.com/suggestions/ca-northwest"}
+        ]
+      }
+  end
 end
