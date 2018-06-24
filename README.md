@@ -20,9 +20,9 @@ Regional data for each endpoint is updated once daily.
 -  https://floating-escarpment-37906.herokuapp.com/suggestions/us-northwest
     + Top three US west coast cities, ranked by coldness, raininess, cloudiness, and windiness.    
 - https://floating-escarpment-37906.herokuapp.com/suggestions/ca-northeast
-    + Top three Canadian east coast cities, ranked by coldness, raininess, cloudiness, and windiness.   
-- https://floating-escarpment-37906.herokuapp.com/suggestions/us-northwest
-    + Top three US east coast cities, ranked by coldness, raininess, cloudiness, and windiness.   
+    + Top three Eastern Canadian cities, ranked by coldness, raininess, cloudiness, and windiness.   
+- https://floating-escarpment-37906.herokuapp.com/suggestions/ca-northwest
+    + Top three Western Canadian cities, ranked by coldness, raininess, cloudiness, and windiness.   
 
 ### City Attributes
 Example JSON data for a city:
