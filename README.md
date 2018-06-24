@@ -5,7 +5,7 @@
 This API uses forecast data from the [OpenWeatherMap API](https://openweathermap.org/).
 
 ## What the Rainward API Provides
-The Rainward API has four endpoints, each of which returns a list three ranked cities for a North American region. The regions are US Northeast, US Northwest, Canada East, and Canada West.
+The Rainward API has four endpoints, each of which returns a list of three ranked cities for a North American region. The regions are US Northeast, US Northwest, Canada East, and Canada West.
 
 Cities are ordered by their dreariness ranking. The top-ranked city has the most dreary and drizzly weather forecast, as determined by the Rainward API. 
 
@@ -65,4 +65,27 @@ Example JSON data for a city:
 ## How the Rainward API Ranks Cities
 The *ranking* for a city is determined by its forecasted precipitation, temperature, cloudiness, and windiness. 
 
-Using data from [OpenWeatherMap API](https://openweathermap.org/), cities receive a point for a each forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, and wind speeds greater than 5 meter/second.    
+Using data from [OpenWeatherMap API](https://openweathermap.org/), cities receive a point for a each evaluated forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, and wind speeds greater than 5 meter/second. 
+
+## Regions and Cities
+Cities are manually seeded to the Rainward API by region.
+
+### US Northeast
+This region covers the northeastern US and midwest.
+
+All Rainward cities in this region are: Philadelphia, Chicago, Columbus, Indianapolis, New York, Minneapolis, Detroit, Milwaukee, Boston, Burlington, Portland
+
+### US Northwest
+This region covers the northwestern US.
+
+All Rainward cities in this region are: Omaha, St. Louis, St. Paul, Boise, Sacramento, Seattle, Denver, Portland, San Francisco
+
+### Canada East
+This region covers all cities on the eastern half of Canada.
+
+All Rainward cities in this region are: Ottawa, Mississauga, Toronto, Winnipeg, Quebec, Montreal
+
+### Canada West
+This region covers all cities on the western half of Canada.
+
+All Rainward cities in this region are: Calgary, Surrey, Vancouver, Edmonton
