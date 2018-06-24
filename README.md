@@ -46,7 +46,7 @@ Example JSON data for a city:
   ```
 ### Attribute Descriptions
 *id:* unique ID for the city  
-*api_id:* city's unique id in the [OpenWeatherMap API]ttps://openweathermap.org/)  
+*api_id:* city's unique id in the [OpenWeatherMap API](https://openweathermap.org/)  
 *rating:* Rainward dreariness rating for a city. Cities are listed in descending order of rating.  
 *name:* city name  
 *country:* country where the city is located [provided by OpenWeatherMap]  
@@ -63,4 +63,4 @@ Example JSON data for a city:
 ## How the Rainward API Ranks Cities
 The *ranking* for a city is determined by its forecasted precipitation, temperature, cloudiness, and windiness. 
 
-Using data from OpenWeatherMap API](https://openweathermap.org/), cities receive a point for a each forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, and wind speeds greater than 5 meter/second.    
+Using data from [OpenWeatherMap API](https://openweathermap.org/), cities receive a point for a each forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, and wind speeds greater than 5 meter/second.    
