@@ -1,13 +1,15 @@
 # Using the Rainward API
 
-[Rainward](https://floating-escarpment-37906.herokuapp.com/suggestions) is an open API that provides JSON data about cities in the US and Canada with dreary and drizzly five-day weather forecasts. Forecasts are provided by the [OpenWeatherMap API](https://openweathermap.org/).
+[Rainward](https://floating-escarpment-37906.herokuapp.com/suggestions) is an open API that provides JSON data about cities in the US and Canada with dreary and drizzly five-day weather forecasts. 
+
+This API uses forecast data from the [OpenWeatherMap API](https://openweathermap.org/).
 
 ## What the Rainward API Provides
 The Rainward API has four endpoints, each of which returns a list three ranked cities for a North American region. The regions are US Northeast, US Northwest, Canada East, and Canada West.
 
-The cities are ordered by ranking. The top-ranked city has the most dreary and drizzly weather forecast, as determined by the Rainward API. 
+Cities are ordered by their dreariness ranking. The top-ranked city has the most dreary and drizzly weather forecast, as determined by the Rainward API. 
 
-The API updates each region once daily.
+Regional data for each endpoint is updated once daily.
 
 
 ## Endpoints
