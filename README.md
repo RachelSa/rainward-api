@@ -4,6 +4,8 @@
 
 This API uses forecast data from the [OpenWeatherMap API](https://openweathermap.org/).
 
+The Rainward API was created to be consumed by [Rainward - a dreary and drizzly destination finder](http://rachelsalois.com/rainward/), but is available for public use.
+
 ## What the Rainward API Provides
 The Rainward API has four endpoints, each of which returns a list of three ranked cities for a North American region. The regions are US Northeast, US Northwest, Canada East, and Canada West.
 
