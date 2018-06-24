@@ -69,7 +69,7 @@ The **ranking** for a city is determined by its forecasted precipitation, temper
 
 Using data from [OpenWeatherMap API](https://openweathermap.org/), cities receive points for each evaluated forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, or wind speed greater than 5 meter/second. 
 
-## Regions and Cities
+## More about Rainward's Regions and Cities
 Cities are manually seeded to the Rainward API by region.
 
 ### US Northeast
