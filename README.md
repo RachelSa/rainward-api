@@ -65,7 +65,7 @@ Example JSON data for a city:
 ## How the Rainward API Ranks Cities
 The **ranking** for a city is determined by its forecasted precipitation, temperature, cloudiness, and windiness. 
 
-Using data from [OpenWeatherMap API](https://openweathermap.org/), cities receive a points each evaluated forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, or wind speed greater than 5 meter/second. 
+Using data from [OpenWeatherMap API](https://openweathermap.org/), cities receive points for each evaluated forecast with a predicted temperature under 50 F, chance of rain, cloud coverage over 50%, or wind speed greater than 5 meter/second. 
 
 ## Regions and Cities
 Cities are manually seeded to the Rainward API by region.
