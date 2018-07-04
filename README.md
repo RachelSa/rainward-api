@@ -49,20 +49,20 @@ Example JSON data for a city:
   }
   ```
 ### Attribute Descriptions
-*id:* unique ID for the city  
-*api_id:* city's unique id in the [OpenWeatherMap API](https://openweathermap.org/)  
-*rating:* Rainward dreariness rating for a city. Cities are listed in descending order of rating.  
-*name:* city name  
-*country:* country where the city is located [provided by OpenWeatherMap]  
-*lat:* latitude [provided by OpenWeatherMap]  
-*lon:* longitude [provided by OpenWeatherMap]  
-*region:* regional code for the city's location  
-*photo_url:* a rainy photo of the city or default rainy photo. Photos are from [Flickr](https://www.flickr.com/) with commercial use allowed.    
-*photo_cred:* credit to the flickr user for the photo in photo_url  
-*precipitation_rating:* scoring (0 to 30) of the city's forecasted precipitation  
-*temperature_rating:* scoring (0 to 30) of the city's forecasted temperature  
-*cloudiness_rating:* scoring (0 to 30) of the city's forecasted cloudiness  
-*windiness_rating:* scoring (0 to 30) of the city's forecasted windiness  
+**id:** unique ID for the city  
+**api_id:** city's unique id in the [OpenWeatherMap API](https://openweathermap.org/)  
+**rating:** Rainward dreariness rating for a city. Cities are listed in descending order of rating.  
+**name:** city name  
+**country:** country where the city is located (provided by [OpenWeatherMap](https://openweathermap.org/))  
+**lat:** latitude (provided by [OpenWeatherMap](https://openweathermap.org/))   
+**lon:** longitude (provided by [OpenWeatherMap](https://openweathermap.org/))  
+**region:** regional code for the city's location  
+**photo_url:** a rainy photo of the city or default rainy photo. Photos are from [Flickr](https://www.flickr.com/) with commercial use allowed.    
+**photo_cred:** credit to the [Flickr](https://www.flickr.com/) user for the photo in photo_url  
+**precipitation_rating:** scoring (0 to 30) of the city's forecasted precipitation  
+**temperature_rating:** scoring (0 to 30) of the city's forecasted temperature  
+**cloudiness_rating:** scoring (0 to 30) of the city's forecasted cloudiness  
+**windiness_rating:** scoring (0 to 30) of the city's forecasted windiness  
 
 ## How the Rainward API Ranks Cities
 The **ranking** for a city is determined by its forecasted precipitation, temperature, cloudiness, and windiness. 
